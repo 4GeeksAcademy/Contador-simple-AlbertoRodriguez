@@ -11,8 +11,38 @@ import '../styles/index.css'
 // components
 import Home from './components/Home';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+
+const reactRender = ReactDOM.createRoot(document.getElementById('root'))
+
+let digits = [0, 0, 0, 0, 0, 0];
+
+setInterval(() => {
+
+  incrementDigits(); 
+
+  reactRender.render(
+    <React.StrictMode>
+      <Home digits={digits} />
+    </React.StrictMode>
+  );
+
+}, 1000);
+
+function incrementDigits() {
+  let index = 5; // último dígito
+
+  while (index >= 0) {
+    if (digits[index] < 9) {
+      digits[index]++;
+      break;            // no hay carry, salimos
+    } else {
+      digits[index] = 0; // reinicia y pasa el carry
+      index--;
+    }
+  }
+}
+
+
+
+
+
