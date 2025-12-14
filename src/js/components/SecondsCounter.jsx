@@ -1,8 +1,8 @@
-const SecondsCounter = () => {
-  const digits = [0, 0, 0, 0, 0, 4];
+const SecondsCounter = ({ digits }) => {      //El componete que dicen las instruciones que creemos
+  
 
   const containerStyle = {
-    display: "flex",
+    display: "flex",          //Las propiedades de las cartitas
     gap: "8px",
     backgroundColor: "black",
     padding: "10px",
@@ -11,13 +11,13 @@ const SecondsCounter = () => {
     alignItems: "center",
   };
 
-  const digitBoxStyle = {
+  const digitBoxStyle = {                       //Los estilos de las cartas de los digitos
     backgroundColor: "#222",
     color: "white",
-    fontFamily: "'Courier New', Courier, monospace",
+    fontFamily: "'Courier New', Courier, monospace",   
     fontSize: "2rem",
-    width: "40px",
-    height: "60px",
+    width: "60px",
+    height: "100px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -25,22 +25,23 @@ const SecondsCounter = () => {
     userSelect: "none",
   };
 
-  const iconBoxStyle = {
+  const iconBoxStyle = {                  //Los estilos de la carta del reloj
     backgroundColor: "#222",
-    width: "40px",
-    height: "60px",
+    width: "60px",
+    height: "100px",
     borderRadius: "8px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   };
 
+
   return (
+     
     <div style={containerStyle}>
       <div style={iconBoxStyle} aria-label="Reloj">
-        <svg
+        <svg                                //Esta tab es para dibujar el reloj,se usa para dibujar gráficos vectoriales
           viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
           focusable="false"
           fill="white"
@@ -50,9 +51,11 @@ const SecondsCounter = () => {
           <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Zm.5-12h-1v6l5.25 3.15.5-.86-4.75-2.79Z" />
         </svg>
       </div>
-      {digits.map((digit, index) => (
+      {
+      digits.map((digit, index) => (
         <div key={index} style={digitBoxStyle}>
           {digit}
+          
         </div>
       ))}
     </div>

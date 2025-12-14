@@ -9,14 +9,7 @@ import SecondsCounter from "./SecondsCounter";
 
 const Home = ({ digits }) => {
 	return (
-		<>
-			<h1 style={{ fontFamily: "monospace", fontSize: "40px" }}>
-				{digits.join("")}
-			</h1>
-
-			<SecondsCounter />
-
-		</>
+			<SecondsCounter digits={digits} />
 	);
 };
 
