@@ -62,4 +62,4 @@ const SecondsCounter = ({ digits }) => {      //El componete que dicen las instr
   )
 }
 
-export default SecondsCounter;
+export default SecondsCounter;      //Finalizado
